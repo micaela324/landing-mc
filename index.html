@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+  <link
+    rel="shortcut icon"
+    href="https://www.modo.com.ar/static/images/favicon.ico"
+  />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MODO Coins</title>
+    <style>
+      body {
+        font-family: "Red Hat Display", sans-serif;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+      }
+
+      .section {
+        text-align: center;
+        margin: auto;
+        width: 85vw;
+        margin-top: 40px;
+      }
+
+      .coin-image {
+        max-width: 250px;
+        margin: 0 auto 20px;
+      }
+
+      .title-container {
+        margin-top: 3rem;
+        padding: 30px; /* Aumentar el espacio alrededor del título */
+        border-radius: 50px; /* Hacer el div más redondo */
+        display: inline-block;
+        animation: scaleAnimation 5s ease-in-out alternate;
+      }
+
+      @keyframes scaleAnimation {
+        0% {
+          transform: scale(1);
+        }
+        80% {
+          transform: scale(1.1);
+        }
+      }
+
+      .title {
+        display: flex;
+        font-weight: 800;
+        font-size: 47px;
+        line-height: 64px;
+        align-items: center;
+      }
+
+      .section p {
+        text-align: center;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        color: #666666;
+        margin-bottom: 3rem;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 18px;
+        background-color: #4caf50;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: background-color 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #45a049;
+      }
+      .faq-section {
+        padding-bottom: 5rem;
+        margin: auto;
+        width: 70vw;
+        margin-top: 50px;
+      }
+
+      .faq {
+        cursor: pointer;
+        background: rgb(234, 234, 234);
+        border-radius: 20px;
+        padding: 1px 20px 20px 20px;
+        margin-bottom: 20px;
+        text-align: left;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .faq h4 {
+        margin-top: 1.5rem;
+        font-size: 24px;
+        color: #333333;
+        margin-bottom: 10px;
+      }
+
+      .faq p {
+        padding: 1rem;
+        margin: 1rem;
+        text-align: center;
+        font-size: 18px;
+        color: #666666;
+        margin: 0;
+      }
+
+      .faq:hover {
+        transform: translateY(-5px);
+      }
+
+      .cta-button {
+        width: 10rem;
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 18px;
+        background-color: #4caf50;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: background-color 0.3s ease;
+        margin-top: 40px;
+      }
+
+      .cta-button:hover {
+        background-color: #45a049;
+      }
+      .span {
+        color: rgb(18, 18, 18);
+        background: rgb(255, 199, 56);
+        border-radius: 30px;
+        white-space: nowrap;
+        padding: 0px 16px;
+        margin-left: 0.5rem;
+      }
+      .loader {
+        transform: translateZ(1px);
+      }
+
+      .loader:after {
+        content: "$";
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        font-size: 32px;
+        font-weight: bold;
+        background: #ffd700;
+        color: #daa520;
+        border: 4px double;
+        box-sizing: border-box;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+        animation: coin-flip 4s cubic-bezier(0, 0.2, 0.8, 1);
+      }
+      .p-info {
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 30px;
+      }
+
+      .coin {
+        width: 5rem;
+      }
+
+      .container-coin-info {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .p-container {
+        color: rgb(65, 65, 65);
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 30px;
+        margin-top: 4px;
+        margin-bottom: 20px;
+      }
+
+      .faq-title {
+        text-align: center;
+      }
+      .modo-coins {
+        width: 10rem;
+      }
+      .modo-coins-container {
+        display: flex;
+        justify-content: space-evenly;
+        background: #008859;
+        padding: 1rem;
+        align-items: center;
+      }
+
+      .modo-coins-container-p {
+        color: rgb(255, 255, 255);
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .modo-coins-ecommerce {
+        width: 50%;
+        margin: auto;
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        padding: 0.8rem 0.5rem;
+        color: rgb(241, 247, 246);
+        border: 1px solid rgb(241, 247, 246);
+        font-weight: 700;
+        border-radius: 20px;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        white-space: nowrap;
+        transition-duration: 0.4s;
+      }
+
+      @keyframes coin-flip {
+        0%,
+        100% {
+          animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+        }
+
+        0% {
+          transform: rotateY(0deg);
+        }
+
+        50% {
+          transform: rotateY(1800deg);
+          animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+        }
+
+        100% {
+          transform: rotateY(3600deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section">
+      <div class="title-container">
+        <div class="title">
+          Cómo funciona <span class="span">MODO Coins</span
+          ><img src="MODO_Coin_loop (1).gif" class="coin" />
+        </div>
+      </div>
+      <div class="container-coin-info">
+        <p class="p-info">
+          Explora como podes juntar puntos para canjearlos por productos,
+          descuentos, regalos exclusivos y más!
+        </p>
+      </div>
+    </div>
+    <div class="modo-coins-container">
+      <div>
+        <p class="modo-coins-container-p">
+          Con MODO Coins, tus compras se premian
+          <br />
+          Modeá, ganá y ahorrá!
+        </p>
+        <a href="" class="modo-coins-ecommerce">Comercios adheridos</a>
+      </div>
+      <img src="modo-coins.png" alt="" class="modo-coins" />
+    </div>
+    <div class="faq-section">
+      <div class="faq">
+        <h4 class="faq-title">¿Cómo sumo puntos?</h4>
+        <p class="p-container">
+          Sumá puntos por tus compras, recargas y pago de servicios.
+        </p>
+      </div>
+      <div class="faq">
+        <h4 class="faq-title">¿Cómo sé cuántas MODO Coins tengo?</h4>
+        <p class="p-container">
+          Ingresando a tu perfil, lo ves en el costado derecho de tu foto de
+          perfil y de tu nombre.
+        </p>
+      </div>
+      <div class="faq">
+        <h4 class="faq-title">¿Cómo puedo canjear mis MODO Coins?</h4>
+        <p class="p-container">
+          Podés canjearlos por plata en la cuenta (para ahorrar o darte un
+          gusto), descuentos en el super o combustible, meses gratis de
+          suscripción, entradas para eventos, membresías de gaming, comprar en
+          tu kiosco mas cercano, o comercio que elijas. Recorda que para
+          canjearlo por plata 1 MODO Coin = $1. Ademas, podes canjear tus puntos
+          cuando lo desees.
+        </p>
+      </div>
+      <div class="faq">
+        <h4 class="faq-title">¿Cuándo recibo mi premio?</h4>
+        <p class="p-container">
+          Cada premio tiene distintas características, revisá cuándo lo
+          recibirás en el detalle del premio antes de canjear. Las MODO Coins
+          podrán ser canjeados a través de la plataforma en línea o en tiendas
+          físicas.
+        </p>
+      </div>
+      <div class="faq">
+        <h4 class="faq-title">¿Cuáles son los beneficios?</h4>
+        <p class="p-container">
+          MODO Coins te acerca a eso que querés, más desafíos cumplís, más y
+          mejores beneficios tenés, desde descuentos en productos hasta regalos
+          exclusivos y experiencias especiales. Para descubrir qué beneficios
+          hay, ¡empezá hoy!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
